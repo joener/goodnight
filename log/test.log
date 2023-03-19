@@ -1,0 +1,1870 @@
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "timecards"[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "timecards" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "time_in" datetime, "time_out" datetime)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_follows"[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "user_follows" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "user_id" integer)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar)[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230314173510)[0m
+  [1m[35m (4.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230314173431),
+(20230314173501);
+
+[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-03-15 07:34:38.819337"], ["updated_at", "2023-03-15 07:34:38.819337"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "51cd99c1b868ceeb31fb6456746cc72fc3fde9af"], ["created_at", "2023-03-15 07:34:38.826335"], ["updated_at", "2023-03-15 07:34:38.826335"]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Error et sint et."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-15 15:54:01 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"test"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "test"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 2266)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Labore vero aut illo."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-15 15:54:01 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"test"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "test"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 676)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Ipsam facilis et maxime."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-15 15:55:11 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"test"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "test"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 2266)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Possimus voluptate nisi aut."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-15 15:55:11 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"test"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "test"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 676)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Ut qui ipsam quisquam."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-15 15:55:50 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"Ut qui ipsam quisquam."}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Ut qui ipsam quisquam."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 2262)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Consequatur quas iusto delectus."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-15 15:55:50 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"Consequatur quas iusto delectus."}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Consequatur quas iusto delectus."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 671)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Amet eos dolorem sint."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Nemo eum laudantium labore."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-15 15:57:34 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"Amet eos dolorem sint."}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Amet eos dolorem sint."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 2262)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Sed iste dolores et."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Est quis perspiciatis debitis."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-15 15:57:34 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"Sed iste dolores et."}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Sed iste dolores et."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 669)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Omnis dolorem nihil aut."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Sed a aut accusantium."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 15:57:34 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"1", "follower_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.1ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = ? ORDER BY "user_follows"."id" ASC LIMIT ?[0m  [["follower_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.1ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id") VALUES (?, ?)[0m  [["follower_id", 2], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 739ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 8536)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Consequatur itaque velit facere."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Est iste vel nihil."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 15:57:35 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"1", "follower_id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.0ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = ? ORDER BY "user_follows"."id" ASC LIMIT ?[0m  [["follower_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.1ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id") VALUES (?, ?)[0m  [["follower_id", 2], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1168)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Dolorem odit ut placeat."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Eius veniam vero esse."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-15 15:58:42 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"Dolorem odit ut placeat."}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Dolorem odit ut placeat."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 2264)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Architecto et assumenda alias."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Velit laboriosam culpa tempore."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-15 15:58:42 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"Architecto et assumenda alias."}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Architecto et assumenda alias."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 671)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Sed quos veritatis nesciunt."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Animi aperiam dignissimos dicta."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 15:58:42 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"1", "follower_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.1ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = ? ORDER BY "user_follows"."id" ASC LIMIT ?[0m  [["follower_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.1ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id") VALUES (?, ?)[0m  [["follower_id", 2], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 8520)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Similique eaque consequatur quas."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Dolorum accusamus aliquam error."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 15:58:42 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"1", "follower_id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.0ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = ? ORDER BY "user_follows"."id" ASC LIMIT ?[0m  [["follower_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.1ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id") VALUES (?, ?)[0m  [["follower_id", 2], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1168)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Nobis non magnam quae."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Aut error sed sint."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 15:58:42 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"1", "follower_id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.0ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = ? ORDER BY "user_follows"."id" ASC LIMIT ?[0m  [["follower_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.1ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id") VALUES (?, ?)[0m  [["follower_id", 2], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1168)
+Started POST "/api/v1/users/unfollow" for 127.0.0.1 at 2023-03-15 15:58:42 +0800
+Processing by Api::V1::UsersController#unfollow as HTML
+  Parameters: {"user_id"=>"1", "follower_id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.1ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = ? AND "user_follows"."user_id" = ?[0m  [["follower_id", 2], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Destroy (0.0ms)[0m  [1m[31mDELETE FROM "user_follows" WHERE "user_follows"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1018)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Aut aut ut nostrum."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Repellat voluptas sit quia."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 15:58:42 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"1", "follower_id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.0ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = ? ORDER BY "user_follows"."id" ASC LIMIT ?[0m  [["follower_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.1ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id") VALUES (?, ?)[0m  [["follower_id", 2], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1168)
+Started POST "/api/v1/users/unfollow" for 127.0.0.1 at 2023-03-15 15:58:42 +0800
+Processing by Api::V1::UsersController#unfollow as HTML
+  Parameters: {"user_id"=>"1", "follower_id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.0ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = ? AND "user_follows"."user_id" = ?[0m  [["follower_id", 2], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Destroy (0.0ms)[0m  [1m[31mDELETE FROM "user_follows" WHERE "user_follows"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 973)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Inventore id sapiente iste."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Est ut atque eius."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Alias et earum quidem."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Similique voluptatum quo eos."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Voluptatem necessitatibus vel sequi."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Rerum totam temporibus esse."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:01:06.819942"], ["time_out", "2023-03-15 16:01:06.819960"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards" for 127.0.0.1 at 2023-03-15 16:01:06 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  [1m[36mTimecard Load (0.1ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" IS NULL ORDER BY "created_at" DESC LIMIT ?[0m  [["LIMIT", 50]]
+Completed 200 OK in 14ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 2068)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Dolore maiores rerum fugit."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Recusandae inventore vel fugiat."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:01:06.866850"], ["time_out", "2023-03-15 16:01:06.866862"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards" for 127.0.0.1 at 2023-03-15 16:01:06 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  [1m[36mTimecard Load (0.1ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" IS NULL ORDER BY "created_at" DESC LIMIT ?[0m  [["LIMIT", 50]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 467)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Ipsa fugiat enim repellendus."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Eius excepturi qui est."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:01:34.267673"], ["time_out", "2023-03-15 16:01:34.267685"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=1" for 127.0.0.1 at 2023-03-15 16:01:34 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTimecard Load (0.1ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = ? ORDER BY "created_at" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 50]]
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 2237)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Laudantium accusamus vel consequatur."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Quasi qui laudantium ex."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:01:34.297533"], ["time_out", "2023-03-15 16:01:34.297541"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=1" for 127.0.0.1 at 2023-03-15 16:01:34 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTimecard Load (0.1ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = ? ORDER BY "created_at" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 50]]
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 589)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Hic dolores dignissimos provident."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Perspiciatis voluptates inventore non."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:03:27.505417"], ["time_out", "2023-03-15 16:03:27.505431"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=1" for 127.0.0.1 at 2023-03-15 16:03:27 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTimecard Load (0.1ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = ? ORDER BY "created_at" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 50]]
+Completed 200 OK in 14ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 2237)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Perferendis nihil est adipisci."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Laborum non ex consequatur."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:03:27.539843"], ["time_out", "2023-03-15 16:03:27.539853"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=1" for 127.0.0.1 at 2023-03-15 16:03:27 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTimecard Load (0.1ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = ? ORDER BY "created_at" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 50]]
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 589)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Tempora cumque error facilis."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Qui veritatis rerum consequatur."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:03:27.547438"], ["time_out", "2023-03-15 16:03:27.547445"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-15 16:03:27 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in") VALUES (?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:03:27.553931"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 892)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Enim nisi esse quasi."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Qui dignissimos tempora quae."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:03:27.558276"], ["time_out", "2023-03-15 16:03:27.558284"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-15 16:03:27 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in") VALUES (?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:03:27.561717"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 887)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Qui quia corrupti nostrum."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Quae qui eum voluptas."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:04:25.012554"], ["time_out", "2023-03-15 16:04:25.012568"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=1" for 127.0.0.1 at 2023-03-15 16:04:25 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTimecard Load (0.1ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = ? ORDER BY "created_at" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 50]]
+Completed 200 OK in 14ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 2237)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Placeat eos aut debitis."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Corrupti consequatur quia dolorem."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:04:25.047910"], ["time_out", "2023-03-15 16:04:25.047925"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=1" for 127.0.0.1 at 2023-03-15 16:04:25 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTimecard Load (0.1ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = ? ORDER BY "created_at" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 50]]
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 589)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Sequi ipsum possimus perferendis."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Magnam ut quasi asperiores."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:04:25.057369"], ["time_out", "2023-03-15 16:04:25.057378"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-15 16:04:25 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in") VALUES (?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:04:25.064029"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 892)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Ut quia porro rerum."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Sint quia et tempora."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:04:25.068471"], ["time_out", "2023-03-15 16:04:25.068479"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-15 16:04:25 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in") VALUES (?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:04:25.072059"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 887)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Qui debitis blanditiis enim."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Unde aut autem assumenda."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:04:25.076506"], ["time_out", "2023-03-15 16:04:25.076514"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_out" for 127.0.0.1 at 2023-03-15 16:04:25 +0800
+Processing by Api::V1::TimecardsController#time_out as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_out") VALUES (?, ?)[0m  [["user_id", 1], ["time_out", "2023-03-15 08:04:25.080017"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 887)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Esse ipsum quia voluptatem."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Suscipit provident eaque aliquam."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:04:25.084425"], ["time_out", "2023-03-15 16:04:25.084432"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_out" for 127.0.0.1 at 2023-03-15 16:04:25 +0800
+Processing by Api::V1::TimecardsController#time_out as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_out") VALUES (?, ?)[0m  [["user_id", 1], ["time_out", "2023-03-15 08:04:25.087815"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 887)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Et voluptas sapiente tempore."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:04:58.830484"], ["time_out", "2023-03-15 16:04:58.830496"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=1" for 127.0.0.1 at 2023-03-15 16:04:58 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTimecard Load (0.1ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = ? ORDER BY "created_at" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 50]]
+Completed 200 OK in 11ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 2237)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Veritatis praesentium velit odit."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:04:58.858913"], ["time_out", "2023-03-15 16:04:58.858921"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=1" for 127.0.0.1 at 2023-03-15 16:04:58 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTimecard Load (0.1ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = ? ORDER BY "created_at" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 50]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 589)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Est voluptates inventore vitae."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:04:58.865066"], ["time_out", "2023-03-15 16:04:58.865074"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-15 16:04:58 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in") VALUES (?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:04:58.871162"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 892)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Magni omnis nihil qui."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:04:58.874376"], ["time_out", "2023-03-15 16:04:58.874384"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-15 16:04:58 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in") VALUES (?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:04:58.877729"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 887)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Aut earum cupiditate voluptatem."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:04:58.881002"], ["time_out", "2023-03-15 16:04:58.881010"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_out" for 127.0.0.1 at 2023-03-15 16:04:58 +0800
+Processing by Api::V1::TimecardsController#time_out as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_out") VALUES (?, ?)[0m  [["user_id", 1], ["time_out", "2023-03-15 08:04:58.884329"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 887)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Quod consequuntur iure voluptate."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:04:58.887535"], ["time_out", "2023-03-15 16:04:58.887543"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_out" for 127.0.0.1 at 2023-03-15 16:04:58 +0800
+Processing by Api::V1::TimecardsController#time_out as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_out") VALUES (?, ?)[0m  [["user_id", 1], ["time_out", "2023-03-15 08:04:58.890968"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 887)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Voluptate sint ipsam quia."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:05:14.154317"], ["time_out", "2023-03-15 16:05:14.154345"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=1" for 127.0.0.1 at 2023-03-15 16:05:14 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTimecard Load (0.1ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = ? ORDER BY "created_at" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 50]]
+Completed 200 OK in 14ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 2237)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Nihil non id nobis."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:05:14.185324"], ["time_out", "2023-03-15 16:05:14.185332"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=1" for 127.0.0.1 at 2023-03-15 16:05:14 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTimecard Load (0.1ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = ? ORDER BY "created_at" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 50]]
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 589)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Eum in qui eos."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:05:14.191826"], ["time_out", "2023-03-15 16:05:14.191833"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-15 16:05:14 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in") VALUES (?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:05:14.198239"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 892)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Sit unde architecto voluptate."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:05:14.203183"], ["time_out", "2023-03-15 16:05:14.203191"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-15 16:05:14 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in") VALUES (?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:05:14.206707"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 887)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Quia est praesentium rem."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:05:14.210117"], ["time_out", "2023-03-15 16:05:14.210125"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_out" for 127.0.0.1 at 2023-03-15 16:05:14 +0800
+Processing by Api::V1::TimecardsController#time_out as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_out") VALUES (?, ?)[0m  [["user_id", 1], ["time_out", "2023-03-15 08:05:14.213660"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 887)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Quam aperiam a consectetur."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:05:14.217066"], ["time_out", "2023-03-15 16:05:14.217074"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_out" for 127.0.0.1 at 2023-03-15 16:05:14 +0800
+Processing by Api::V1::TimecardsController#time_out as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_out") VALUES (?, ?)[0m  [["user_id", 1], ["time_out", "2023-03-15 08:05:14.220497"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 887)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Omnis iusto velit amet."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:06:02.445638"], ["time_out", "2023-03-15 16:06:02.445651"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=1" for 127.0.0.1 at 2023-03-15 16:06:02 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTimecard Load (0.1ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = ? ORDER BY "created_at" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 50]]
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 2237)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Praesentium eos maiores quidem."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:06:02.476453"], ["time_out", "2023-03-15 16:06:02.476462"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=1" for 127.0.0.1 at 2023-03-15 16:06:02 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTimecard Load (0.1ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = ? ORDER BY "created_at" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 50]]
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 589)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Beatae dolore eum non."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:06:02.483038"], ["time_out", "2023-03-15 16:06:02.483046"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-15 16:06:02 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in") VALUES (?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:06:02.489333"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 892)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Soluta rerum sed ut."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:06:02.494633"], ["time_out", "2023-03-15 16:06:02.494651"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-15 16:06:02 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in") VALUES (?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:06:02.499183"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 887)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Iusto enim necessitatibus veritatis."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:06:02.502883"], ["time_out", "2023-03-15 16:06:02.502890"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_out" for 127.0.0.1 at 2023-03-15 16:06:02 +0800
+Processing by Api::V1::TimecardsController#time_out as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_out") VALUES (?, ?)[0m  [["user_id", 1], ["time_out", "2023-03-15 08:06:02.506354"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 887)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Natus tenetur consequatur repudiandae."]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES (?, ?, ?)[0m  [["user_id", 1], ["time_in", "2023-03-15 08:06:02.509687"], ["time_out", "2023-03-15 16:06:02.509695"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_out" for 127.0.0.1 at 2023-03-15 16:06:02 +0800
+Processing by Api::V1::TimecardsController#time_out as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.1ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_out") VALUES (?, ?)[0m  [["user_id", 1], ["time_out", "2023-03-15 08:06:02.513280"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 887)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (112.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "goodnight-app_test"[0m
+  [1m[35m (487.7ms)[0m  [1m[35mCREATE DATABASE "goodnight-app_test" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "timecards" CASCADE[0m
+  [1m[35m (14.6ms)[0m  [1m[35mCREATE TABLE "timecards" ("id" bigserial primary key, "user_id" integer, "time_in" timestamp, "time_out" timestamp)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_follows" CASCADE[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "user_follows" ("id" bigserial primary key, "follower_id" integer, "user_id" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying)[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230314173510)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230314173431),
+(20230314173501);
+
+[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-03-15 08:10:53.999086"], ["updated_at", "2023-03-15 08:10:53.999086"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "2fe7b7c4d6a8d7f06ac7d9e34162d4ae97386b39"], ["created_at", "2023-03-15 08:10:54.003195"], ["updated_at", "2023-03-15 08:10:54.003195"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Deserunt velit dolores architecto."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.3ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["time_in", "2023-03-15 08:10:54.264995"], ["time_out", "2023-03-15 16:10:54.265010"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=1" for 127.0.0.1 at 2023-03-15 16:10:54 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTimecard Load (0.4ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = $1 ORDER BY "created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 50]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms | Allocations: 2186)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Eaque soluta totam voluptatem."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["time_in", "2023-03-15 08:10:54.299038"], ["time_out", "2023-03-15 16:10:54.299050"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=2" for 127.0.0.1 at 2023-03-15 16:10:54 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mTimecard Load (0.4ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = $1 ORDER BY "created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 50]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.4ms | Allocations: 573)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Quisquam qui voluptatem illum."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["time_in", "2023-03-15 08:10:54.307339"], ["time_out", "2023-03-15 16:10:54.307363"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-15 16:10:54 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 3], ["time_in", "2023-03-15 08:10:54.315082"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 914)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Voluptatibus aliquam repellat quia."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 4], ["time_in", "2023-03-15 08:10:54.320931"], ["time_out", "2023-03-15 16:10:54.320939"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-15 16:10:54 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 4], ["time_in", "2023-03-15 08:10:54.325143"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 878)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Iste quaerat velit culpa."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 5], ["time_in", "2023-03-15 08:10:54.329651"], ["time_out", "2023-03-15 16:10:54.329658"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_out" for 127.0.0.1 at 2023-03-15 16:10:54 +0800
+Processing by Api::V1::TimecardsController#time_out as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_out") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 5], ["time_out", "2023-03-15 08:10:54.333852"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 878)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Officiis sunt dolorem vel."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 6], ["time_in", "2023-03-15 08:10:54.337872"], ["time_out", "2023-03-15 16:10:54.337878"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_out" for 127.0.0.1 at 2023-03-15 16:10:54 +0800
+Processing by Api::V1::TimecardsController#time_out as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_out") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 6], ["time_out", "2023-03-15 08:10:54.341665"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 878)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Ea voluptas ut et."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Vel aut ut dolorem."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-15 16:10:54 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"Ea voluptas ut et."}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Ea voluptas ut et."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 681)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Deserunt quia harum temporibus."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Est vero tenetur laudantium."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-15 16:10:54 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"Deserunt quia harum temporibus."}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Deserunt quia harum temporibus."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 648)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Blanditiis beatae nesciunt itaque."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Eaque ut est consequatur."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 16:10:54 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"13", "follower_id"=>"14"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.2ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 ORDER BY "user_follows"."id" ASC LIMIT $2[0m  [["follower_id", 14], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.3ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["follower_id", 14], ["user_id", 13]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 3.1ms | Allocations: 5915)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Facere ut eum quidem."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Ea aut unde porro."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 16:10:54 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"15", "follower_id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.2ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 ORDER BY "user_follows"."id" ASC LIMIT $2[0m  [["follower_id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.1ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["follower_id", 16], ["user_id", 15]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1179)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Cum omnis aut pariatur."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Aut doloribus iure labore."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 16:10:54 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"17", "follower_id"=>"18"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.2ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 ORDER BY "user_follows"."id" ASC LIMIT $2[0m  [["follower_id", 18], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.3ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["follower_id", 18], ["user_id", 17]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 1179)
+Started POST "/api/v1/users/unfollow" for 127.0.0.1 at 2023-03-15 16:10:54 +0800
+Processing by Api::V1::UsersController#unfollow as HTML
+  Parameters: {"user_id"=>"17", "follower_id"=>"18"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.1ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 AND "user_follows"."user_id" = $2[0m  [["follower_id", 18], ["user_id", 17]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Destroy (0.1ms)[0m  [1m[31mDELETE FROM "user_follows" WHERE "user_follows"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 1003)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Nulla nam nobis alias."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Cupiditate et voluptas minus."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 16:10:54 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"19", "follower_id"=>"20"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.2ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 ORDER BY "user_follows"."id" ASC LIMIT $2[0m  [["follower_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.1ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["follower_id", 20], ["user_id", 19]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 1179)
+Started POST "/api/v1/users/unfollow" for 127.0.0.1 at 2023-03-15 16:10:54 +0800
+Processing by Api::V1::UsersController#unfollow as HTML
+  Parameters: {"user_id"=>"19", "follower_id"=>"20"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.1ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 AND "user_follows"."user_id" = $2[0m  [["follower_id", 20], ["user_id", 19]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Destroy (0.1ms)[0m  [1m[31mDELETE FROM "user_follows" WHERE "user_follows"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 971)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (107.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "goodnight-app_test"[0m
+  [1m[35m (510.4ms)[0m  [1m[35mCREATE DATABASE "goodnight-app_test" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "timecards" CASCADE[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE "timecards" ("id" bigserial primary key, "user_id" integer, "time_in" timestamp, "time_out" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_follows" CASCADE[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "user_follows" ("id" bigserial primary key, "follower_id" integer, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230314173510)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230314173431),
+(20230314173501);
+
+[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-03-15 08:12:08.390807"], ["updated_at", "2023-03-15 08:12:08.390807"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "abb1437a5f6b843f6acb708106a9652f508dd87c"], ["created_at", "2023-03-15 08:12:08.394762"], ["updated_at", "2023-03-15 08:12:08.394762"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Reprehenderit reiciendis veniam quas."], ["created_at", "2023-03-15 08:12:08.643112"], ["updated_at", "2023-03-15 08:12:08.643112"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.3ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["time_in", "2023-03-15 08:12:08.654689"], ["time_out", "2023-03-15 16:12:08.654745"], ["created_at", "2023-03-15 08:12:08.661257"], ["updated_at", "2023-03-15 08:12:08.661257"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=1" for 127.0.0.1 at 2023-03-15 16:12:08 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTimecard Load (0.3ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = $1 ORDER BY "timecards"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 50]]
+Completed 200 OK in 15ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 2290)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Modi est est laboriosam."], ["created_at", "2023-03-15 08:12:08.692306"], ["updated_at", "2023-03-15 08:12:08.692306"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["time_in", "2023-03-15 08:12:08.693597"], ["time_out", "2023-03-15 16:12:08.693604"], ["created_at", "2023-03-15 08:12:08.694556"], ["updated_at", "2023-03-15 08:12:08.694556"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=2" for 127.0.0.1 at 2023-03-15 16:12:08 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mTimecard Load (0.2ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = $1 ORDER BY "timecards"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 50]]
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 625)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Repudiandae voluptas quaerat eum."], ["created_at", "2023-03-15 08:12:08.701547"], ["updated_at", "2023-03-15 08:12:08.701547"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["time_in", "2023-03-15 08:12:08.702761"], ["time_out", "2023-03-15 16:12:08.702769"], ["created_at", "2023-03-15 08:12:08.703773"], ["updated_at", "2023-03-15 08:12:08.703773"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-15 16:12:08 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 3], ["time_in", "2023-03-15 08:12:08.710813"], ["created_at", "2023-03-15 08:12:08.712020"], ["updated_at", "2023-03-15 08:12:08.712020"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 1077)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "In explicabo voluptatem minima."], ["created_at", "2023-03-15 08:12:08.715342"], ["updated_at", "2023-03-15 08:12:08.715342"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 4], ["time_in", "2023-03-15 08:12:08.716501"], ["time_out", "2023-03-15 16:12:08.716507"], ["created_at", "2023-03-15 08:12:08.717197"], ["updated_at", "2023-03-15 08:12:08.717197"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-15 16:12:08 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["time_in", "2023-03-15 08:12:08.720886"], ["created_at", "2023-03-15 08:12:08.721885"], ["updated_at", "2023-03-15 08:12:08.721885"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 1072)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Qui aut itaque vero."], ["created_at", "2023-03-15 08:12:08.725738"], ["updated_at", "2023-03-15 08:12:08.725738"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 5], ["time_in", "2023-03-15 08:12:08.727044"], ["time_out", "2023-03-15 16:12:08.727051"], ["created_at", "2023-03-15 08:12:08.727918"], ["updated_at", "2023-03-15 08:12:08.727918"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_out" for 127.0.0.1 at 2023-03-15 16:12:08 +0800
+Processing by Api::V1::TimecardsController#time_out as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 5], ["time_out", "2023-03-15 08:12:08.731509"], ["created_at", "2023-03-15 08:12:08.732327"], ["updated_at", "2023-03-15 08:12:08.732327"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1072)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Assumenda dicta deserunt et."], ["created_at", "2023-03-15 08:12:08.734765"], ["updated_at", "2023-03-15 08:12:08.734765"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 6], ["time_in", "2023-03-15 08:12:08.735732"], ["time_out", "2023-03-15 16:12:08.735737"], ["created_at", "2023-03-15 08:12:08.736470"], ["updated_at", "2023-03-15 08:12:08.736470"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_out" for 127.0.0.1 at 2023-03-15 16:12:08 +0800
+Processing by Api::V1::TimecardsController#time_out as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 6], ["time_out", "2023-03-15 08:12:08.739692"], ["created_at", "2023-03-15 08:12:08.740557"], ["updated_at", "2023-03-15 08:12:08.740557"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1072)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Tempore dolorum quidem esse."], ["created_at", "2023-03-15 08:12:08.743152"], ["updated_at", "2023-03-15 08:12:08.743152"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Incidunt reprehenderit quisquam adipisci."], ["created_at", "2023-03-15 08:12:08.744409"], ["updated_at", "2023-03-15 08:12:08.744409"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-15 16:12:08 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"Tempore dolorum quidem esse."}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Tempore dolorum quidem esse."], ["created_at", "2023-03-15 08:12:08.749559"], ["updated_at", "2023-03-15 08:12:08.749559"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 869)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Aliquam minus perspiciatis quidem."], ["created_at", "2023-03-15 08:12:08.752721"], ["updated_at", "2023-03-15 08:12:08.752721"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Non aut itaque rem."], ["created_at", "2023-03-15 08:12:08.754509"], ["updated_at", "2023-03-15 08:12:08.754509"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-15 16:12:08 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"Aliquam minus perspiciatis quidem."}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Aliquam minus perspiciatis quidem."], ["created_at", "2023-03-15 08:12:08.758556"], ["updated_at", "2023-03-15 08:12:08.758556"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 832)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Ratione quo occaecati beatae."], ["created_at", "2023-03-15 08:12:08.761653"], ["updated_at", "2023-03-15 08:12:08.761653"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Expedita et voluptatem aut."], ["created_at", "2023-03-15 08:12:08.762877"], ["updated_at", "2023-03-15 08:12:08.762877"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 16:12:08 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"13", "follower_id"=>"14"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.2ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 ORDER BY "user_follows"."id" ASC LIMIT $2[0m  [["follower_id", 14], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.3ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 14], ["user_id", 13], ["created_at", "2023-03-15 08:12:08.777221"], ["updated_at", "2023-03-15 08:12:08.777221"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 2.9ms | Allocations: 7517)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sapiente illum non quod."], ["created_at", "2023-03-15 08:12:08.779899"], ["updated_at", "2023-03-15 08:12:08.779899"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Tempore fugiat sed quos."], ["created_at", "2023-03-15 08:12:08.781129"], ["updated_at", "2023-03-15 08:12:08.781129"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 16:12:08 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"15", "follower_id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.2ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 ORDER BY "user_follows"."id" ASC LIMIT $2[0m  [["follower_id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.2ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 16], ["user_id", 15], ["created_at", "2023-03-15 08:12:08.786252"], ["updated_at", "2023-03-15 08:12:08.786252"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1339)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Est blanditiis beatae quam."], ["created_at", "2023-03-15 08:12:08.789184"], ["updated_at", "2023-03-15 08:12:08.789184"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sapiente earum aut a."], ["created_at", "2023-03-15 08:12:08.790449"], ["updated_at", "2023-03-15 08:12:08.790449"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 16:12:08 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"17", "follower_id"=>"18"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.1ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 ORDER BY "user_follows"."id" ASC LIMIT $2[0m  [["follower_id", 18], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.2ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 18], ["user_id", 17], ["created_at", "2023-03-15 08:12:08.795200"], ["updated_at", "2023-03-15 08:12:08.795200"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1339)
+Started POST "/api/v1/users/unfollow" for 127.0.0.1 at 2023-03-15 16:12:08 +0800
+Processing by Api::V1::UsersController#unfollow as HTML
+  Parameters: {"user_id"=>"17", "follower_id"=>"18"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.1ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 AND "user_follows"."user_id" = $2[0m  [["follower_id", 18], ["user_id", 17]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Destroy (0.1ms)[0m  [1m[31mDELETE FROM "user_follows" WHERE "user_follows"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 1032)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Et qui molestiae id."], ["created_at", "2023-03-15 08:12:08.802064"], ["updated_at", "2023-03-15 08:12:08.802064"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Deleniti et mollitia eum."], ["created_at", "2023-03-15 08:12:08.803601"], ["updated_at", "2023-03-15 08:12:08.803601"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 16:12:08 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"19", "follower_id"=>"20"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.2ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 ORDER BY "user_follows"."id" ASC LIMIT $2[0m  [["follower_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.2ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 20], ["user_id", 19], ["created_at", "2023-03-15 08:12:08.808721"], ["updated_at", "2023-03-15 08:12:08.808721"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 1339)
+Started POST "/api/v1/users/unfollow" for 127.0.0.1 at 2023-03-15 16:12:08 +0800
+Processing by Api::V1::UsersController#unfollow as HTML
+  Parameters: {"user_id"=>"19", "follower_id"=>"20"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.1ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 AND "user_follows"."user_id" = $2[0m  [["follower_id", 20], ["user_id", 19]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_follows" WHERE "user_follows"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 998)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (92.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "goodnight-app_test"[0m
+  [1m[35m (227.5ms)[0m  [1m[35mCREATE DATABASE "goodnight-app_test" ENCODING = 'utf8'[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "timecards" CASCADE[0m
+  [1m[35m (84.8ms)[0m  [1m[35mCREATE TABLE "timecards" ("id" bigserial primary key, "user_id" integer, "time_in" timestamp, "time_out" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_follows" CASCADE[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE "user_follows" ("id" bigserial primary key, "follower_id" integer, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (15.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230314173510)[0m
+  [1m[35m (10.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230314173431),
+(20230314173501);
+
+[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-03-15 09:54:24.604023"], ["updated_at", "2023-03-15 09:54:24.604023"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "abb1437a5f6b843f6acb708106a9652f508dd87c"], ["created_at", "2023-03-15 09:54:24.612851"], ["updated_at", "2023-03-15 09:54:24.612851"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (4.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Recusandae repudiandae illum quibusdam."], ["created_at", "2023-03-15 09:54:29.284924"], ["updated_at", "2023-03-15 09:54:29.284924"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimecard Create (9.2ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["time_in", "2023-03-15 09:54:29.316887"], ["time_out", "2023-03-15 17:54:29.316912"], ["created_at", "2023-03-15 09:54:29.341868"], ["updated_at", "2023-03-15 09:54:29.341868"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=1" for 127.0.0.1 at 2023-03-15 17:54:29 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTimecard Load (1.6ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = $1 ORDER BY "timecards"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 50]]
+Completed 200 OK in 37ms (Views: 5.0ms | ActiveRecord: 1.6ms | Allocations: 2287)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Asperiores odio eos amet."], ["created_at", "2023-03-15 09:54:29.447348"], ["updated_at", "2023-03-15 09:54:29.447348"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.5ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["time_in", "2023-03-15 09:54:29.450607"], ["time_out", "2023-03-15 17:54:29.450621"], ["created_at", "2023-03-15 09:54:29.453107"], ["updated_at", "2023-03-15 09:54:29.453107"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=2" for 127.0.0.1 at 2023-03-15 17:54:29 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mTimecard Load (0.5ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = $1 ORDER BY "timecards"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 50]]
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 562)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Unde aut inventore atque."], ["created_at", "2023-03-15 09:54:29.481255"], ["updated_at", "2023-03-15 09:54:29.481255"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.7ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["time_in", "2023-03-15 09:54:29.485054"], ["time_out", "2023-03-15 17:54:29.485075"], ["created_at", "2023-03-15 09:54:29.488577"], ["updated_at", "2023-03-15 09:54:29.488577"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-15 17:54:29 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.7ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 3], ["time_in", "2023-03-15 09:54:29.554545"], ["created_at", "2023-03-15 09:54:29.557147"], ["updated_at", "2023-03-15 09:54:29.557147"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 1.8ms | Allocations: 924)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dolor aut cupiditate assumenda."], ["created_at", "2023-03-15 09:54:29.566001"], ["updated_at", "2023-03-15 09:54:29.566001"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTimecard Create (1.5ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 4], ["time_in", "2023-03-15 09:54:29.568575"], ["time_out", "2023-03-15 17:54:29.568592"], ["created_at", "2023-03-15 09:54:29.570425"], ["updated_at", "2023-03-15 09:54:29.570425"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-15 17:54:29 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.7ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["time_in", "2023-03-15 09:54:29.604575"], ["created_at", "2023-03-15 09:54:29.607806"], ["updated_at", "2023-03-15 09:54:29.607806"]]
+  [1m[35m (1.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 2.8ms | Allocations: 919)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Ea libero sit et."], ["created_at", "2023-03-15 09:54:29.619413"], ["updated_at", "2023-03-15 09:54:29.619413"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimecard Create (1.4ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 5], ["time_in", "2023-03-15 09:54:29.623455"], ["time_out", "2023-03-15 17:54:29.623476"], ["created_at", "2023-03-15 09:54:29.626769"], ["updated_at", "2023-03-15 09:54:29.626769"]]
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_out" for 127.0.0.1 at 2023-03-15 17:54:29 +0800
+Processing by Api::V1::TimecardsController#time_out as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.6ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 5], ["time_out", "2023-03-15 09:54:29.656226"], ["created_at", "2023-03-15 09:54:29.659016"], ["updated_at", "2023-03-15 09:54:29.659016"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 1.6ms | Allocations: 919)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sapiente recusandae laboriosam voluptatibus."], ["created_at", "2023-03-15 09:54:29.668019"], ["updated_at", "2023-03-15 09:54:29.668019"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTimecard Create (1.0ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 6], ["time_in", "2023-03-15 09:54:29.670775"], ["time_out", "2023-03-15 17:54:29.670788"], ["created_at", "2023-03-15 09:54:29.672860"], ["updated_at", "2023-03-15 09:54:29.672860"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_out" for 127.0.0.1 at 2023-03-15 17:54:29 +0800
+Processing by Api::V1::TimecardsController#time_out as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTimecard Create (1.0ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 6], ["time_out", "2023-03-15 09:54:29.699830"], ["created_at", "2023-03-15 09:54:29.702603"], ["updated_at", "2023-03-15 09:54:29.702603"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 2.3ms | Allocations: 919)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Voluptatibus quaerat sunt culpa."], ["created_at", "2023-03-15 09:54:29.712206"], ["updated_at", "2023-03-15 09:54:29.712206"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Corporis modi deleniti aliquid."], ["created_at", "2023-03-15 09:54:29.717273"], ["updated_at", "2023-03-15 09:54:29.717273"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-15 17:54:29 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"Voluptatibus quaerat sunt culpa."}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Voluptatibus quaerat sunt culpa."], ["created_at", "2023-03-15 09:54:29.771983"], ["updated_at", "2023-03-15 09:54:29.771983"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.3ms | Allocations: 737)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Et est commodi porro."], ["created_at", "2023-03-15 09:54:29.780748"], ["updated_at", "2023-03-15 09:54:29.780748"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Vel qui est aperiam."], ["created_at", "2023-03-15 09:54:29.785271"], ["updated_at", "2023-03-15 09:54:29.785271"]]
+  [1m[35m (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-15 17:54:29 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"Et est commodi porro."}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Et est commodi porro."], ["created_at", "2023-03-15 09:54:29.807005"], ["updated_at", "2023-03-15 09:54:29.807005"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 696)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Tenetur reiciendis deleniti blanditiis."], ["created_at", "2023-03-15 09:54:29.815942"], ["updated_at", "2023-03-15 09:54:29.815942"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Nisi incidunt laboriosam consequatur."], ["created_at", "2023-03-15 09:54:29.819358"], ["updated_at", "2023-03-15 09:54:29.819358"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 17:54:29 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"13", "follower_id"=>"14"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (3.6ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 ORDER BY "user_follows"."id" ASC LIMIT $2[0m  [["follower_id", 14], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (3.3ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 14], ["user_id", 13], ["created_at", "2023-03-15 09:54:29.891167"], ["updated_at", "2023-03-15 09:54:29.891167"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 53ms (Views: 0.2ms | ActiveRecord: 18.6ms | Allocations: 7259)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Odit laudantium corporis assumenda."], ["created_at", "2023-03-15 09:54:29.901455"], ["updated_at", "2023-03-15 09:54:29.901455"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Quod quibusdam commodi perferendis."], ["created_at", "2023-03-15 09:54:29.904240"], ["updated_at", "2023-03-15 09:54:29.904240"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 17:54:29 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"15", "follower_id"=>"16"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (1.4ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 ORDER BY "user_follows"."id" ASC LIMIT $2[0m  [["follower_id", 16], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.7ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 16], ["user_id", 15], ["created_at", "2023-03-15 09:54:29.929490"], ["updated_at", "2023-03-15 09:54:29.929490"]]
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 4.0ms | Allocations: 1187)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fugiat aliquam similique accusantium."], ["created_at", "2023-03-15 09:54:29.938313"], ["updated_at", "2023-03-15 09:54:29.938313"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Qui perspiciatis est deleniti."], ["created_at", "2023-03-15 09:54:29.943299"], ["updated_at", "2023-03-15 09:54:29.943299"]]
+  [1m[35m (0.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 17:54:29 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"17", "follower_id"=>"18"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.9ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 ORDER BY "user_follows"."id" ASC LIMIT $2[0m  [["follower_id", 18], ["LIMIT", 1]]
+  [1m[35m (2.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (2.2ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 18], ["user_id", 17], ["created_at", "2023-03-15 09:54:29.972993"], ["updated_at", "2023-03-15 09:54:29.972993"]]
+  [1m[35m (1.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 8.1ms | Allocations: 1187)
+Started POST "/api/v1/users/unfollow" for 127.0.0.1 at 2023-03-15 17:54:29 +0800
+Processing by Api::V1::UsersController#unfollow as HTML
+  Parameters: {"user_id"=>"17", "follower_id"=>"18"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.4ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 AND "user_follows"."user_id" = $2[0m  [["follower_id", 18], ["user_id", 17]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_follows" WHERE "user_follows"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 959)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Reiciendis ut ut et."], ["created_at", "2023-03-15 09:54:30.015779"], ["updated_at", "2023-03-15 09:54:30.015779"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Ut beatae ipsa in."], ["created_at", "2023-03-15 09:54:30.018542"], ["updated_at", "2023-03-15 09:54:30.018542"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-15 17:54:30 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"19", "follower_id"=>"20"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.4ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 ORDER BY "user_follows"."id" ASC LIMIT $2[0m  [["follower_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.6ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 20], ["user_id", 19], ["created_at", "2023-03-15 09:54:30.045560"], ["updated_at", "2023-03-15 09:54:30.045560"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 1187)
+Started POST "/api/v1/users/unfollow" for 127.0.0.1 at 2023-03-15 17:54:30 +0800
+Processing by Api::V1::UsersController#unfollow as HTML
+  Parameters: {"user_id"=>"19", "follower_id"=>"20"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.5ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 AND "user_follows"."user_id" = $2[0m  [["follower_id", 20], ["user_id", 19]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Destroy (0.5ms)[0m  [1m[31mDELETE FROM "user_follows" WHERE "user_follows"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 929)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (11.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Perferendis numquam ipsa qui."], ["created_at", "2023-03-19 10:13:59.944209"], ["updated_at", "2023-03-19 10:13:59.944209"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mTimecard Create (2.4ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 21], ["time_in", "2023-03-19 10:13:59.976643"], ["time_out", "2023-03-19 18:13:59.976659"], ["created_at", "2023-03-19 10:13:59.986797"], ["updated_at", "2023-03-19 10:13:59.986797"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=21" for 127.0.0.1 at 2023-03-19 18:13:59 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"21"}
+  [1m[36mTimecard Load (1.6ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = $1 ORDER BY "timecards"."created_at" DESC LIMIT $2[0m  [["user_id", 21], ["LIMIT", 50]]
+Completed 200 OK in 22ms (Views: 1.9ms | ActiveRecord: 1.6ms | Allocations: 1689)
+  [1m[35m (1.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Quo quas ut itaque."], ["created_at", "2023-03-19 10:14:00.043846"], ["updated_at", "2023-03-19 10:14:00.043846"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.6ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 22], ["time_in", "2023-03-19 10:14:00.046091"], ["time_out", "2023-03-19 18:14:00.046102"], ["created_at", "2023-03-19 10:14:00.047615"], ["updated_at", "2023-03-19 10:14:00.047615"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/timecards?user_id=22" for 127.0.0.1 at 2023-03-19 18:14:00 +0800
+Processing by Api::V1::TimecardsController#index as HTML
+  Parameters: {"user_id"=>"22"}
+  [1m[36mTimecard Load (0.8ms)[0m  [1m[34mSELECT "timecards".* FROM "timecards" WHERE "timecards"."user_id" = $1 ORDER BY "timecards"."created_at" DESC LIMIT $2[0m  [["user_id", 22], ["LIMIT", 50]]
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.8ms | Allocations: 562)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Ut ratione rerum enim."], ["created_at", "2023-03-19 10:14:00.067503"], ["updated_at", "2023-03-19 10:14:00.067503"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.7ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 23], ["time_in", "2023-03-19 10:14:00.070777"], ["time_out", "2023-03-19 18:14:00.070799"], ["created_at", "2023-03-19 10:14:00.073014"], ["updated_at", "2023-03-19 10:14:00.073014"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-19 18:14:00 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"23"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.3ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 23], ["time_in", "2023-03-19 10:14:00.092978"], ["created_at", "2023-03-19 10:14:00.094674"], ["updated_at", "2023-03-19 10:14:00.094674"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 924)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Iure qui perferendis ipsam."], ["created_at", "2023-03-19 10:14:00.098580"], ["updated_at", "2023-03-19 10:14:00.098580"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.3ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 24], ["time_in", "2023-03-19 10:14:00.100265"], ["time_out", "2023-03-19 18:14:00.100275"], ["created_at", "2023-03-19 10:14:00.101424"], ["updated_at", "2023-03-19 10:14:00.101424"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_in" for 127.0.0.1 at 2023-03-19 18:14:00 +0800
+Processing by Api::V1::TimecardsController#time_in as HTML
+  Parameters: {"user_id"=>"24"}
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.8ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 24], ["time_in", "2023-03-19 10:14:00.115793"], ["created_at", "2023-03-19 10:14:00.118314"], ["updated_at", "2023-03-19 10:14:00.118314"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 2.3ms | Allocations: 919)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dolor tempore nemo aliquid."], ["created_at", "2023-03-19 10:14:00.125144"], ["updated_at", "2023-03-19 10:14:00.125144"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.5ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 25], ["time_in", "2023-03-19 10:14:00.127494"], ["time_out", "2023-03-19 18:14:00.127516"], ["created_at", "2023-03-19 10:14:00.129421"], ["updated_at", "2023-03-19 10:14:00.129421"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_out" for 127.0.0.1 at 2023-03-19 18:14:00 +0800
+Processing by Api::V1::TimecardsController#time_out as HTML
+  Parameters: {"user_id"=>"25"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.3ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 25], ["time_out", "2023-03-19 10:14:00.141213"], ["created_at", "2023-03-19 10:14:00.142450"], ["updated_at", "2023-03-19 10:14:00.142450"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 919)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Et accusamus aut reprehenderit."], ["created_at", "2023-03-19 10:14:00.146108"], ["updated_at", "2023-03-19 10:14:00.146108"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mTimecard Create (0.4ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_in", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 26], ["time_in", "2023-03-19 10:14:00.147706"], ["time_out", "2023-03-19 18:14:00.147718"], ["created_at", "2023-03-19 10:14:00.149668"], ["updated_at", "2023-03-19 10:14:00.149668"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/timecards/time_out" for 127.0.0.1 at 2023-03-19 18:14:00 +0800
+Processing by Api::V1::TimecardsController#time_out as HTML
+  Parameters: {"user_id"=>"26"}
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mTimecard Create (2.0ms)[0m  [1m[32mINSERT INTO "timecards" ("user_id", "time_out", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 26], ["time_out", "2023-03-19 10:14:00.164197"], ["created_at", "2023-03-19 10:14:00.166764"], ["updated_at", "2023-03-19 10:14:00.166764"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 3.4ms | Allocations: 919)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Facilis non rem sint."], ["created_at", "2023-03-19 10:14:00.175215"], ["updated_at", "2023-03-19 10:14:00.175215"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Et deleniti reiciendis rerum."], ["created_at", "2023-03-19 10:14:00.178135"], ["updated_at", "2023-03-19 10:14:00.178135"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-19 18:14:00 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"Facilis non rem sint."}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Facilis non rem sint."], ["created_at", "2023-03-19 10:14:00.193620"], ["updated_at", "2023-03-19 10:14:00.193620"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 733)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Rerum consequatur qui et."], ["created_at", "2023-03-19 10:14:00.198697"], ["updated_at", "2023-03-19 10:14:00.198697"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sapiente iure nulla nesciunt."], ["created_at", "2023-03-19 10:14:00.201076"], ["updated_at", "2023-03-19 10:14:00.201076"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-03-19 18:14:00 +0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"name"=>"Rerum consequatur qui et."}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Rerum consequatur qui et."], ["created_at", "2023-03-19 10:14:00.215716"], ["updated_at", "2023-03-19 10:14:00.215716"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.4ms | Allocations: 698)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Occaecati minima numquam eaque."], ["created_at", "2023-03-19 10:14:00.222935"], ["updated_at", "2023-03-19 10:14:00.222935"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cumque culpa consequatur quaerat."], ["created_at", "2023-03-19 10:14:00.226058"], ["updated_at", "2023-03-19 10:14:00.226058"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-19 18:14:00 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"33", "follower_id"=>"34"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (2.2ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 ORDER BY "user_follows"."id" ASC LIMIT $2[0m  [["follower_id", 34], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (2.9ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 34], ["user_id", 33], ["created_at", "2023-03-19 10:14:00.257725"], ["updated_at", "2023-03-19 10:14:00.257725"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 9.9ms | Allocations: 5795)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dignissimos officiis perspiciatis facere."], ["created_at", "2023-03-19 10:14:00.267752"], ["updated_at", "2023-03-19 10:14:00.267752"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Ut adipisci mollitia voluptas."], ["created_at", "2023-03-19 10:14:00.271505"], ["updated_at", "2023-03-19 10:14:00.271505"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-19 18:14:00 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"35", "follower_id"=>"36"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.3ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 ORDER BY "user_follows"."id" ASC LIMIT $2[0m  [["follower_id", 36], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.3ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 36], ["user_id", 35], ["created_at", "2023-03-19 10:14:00.288665"], ["updated_at", "2023-03-19 10:14:00.288665"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 1187)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Explicabo facere aut consectetur."], ["created_at", "2023-03-19 10:14:00.294116"], ["updated_at", "2023-03-19 10:14:00.294116"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Quae qui et ut."], ["created_at", "2023-03-19 10:14:00.296199"], ["updated_at", "2023-03-19 10:14:00.296199"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-19 18:14:00 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"37", "follower_id"=>"38"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.5ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 ORDER BY "user_follows"."id" ASC LIMIT $2[0m  [["follower_id", 38], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.5ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 38], ["user_id", 37], ["created_at", "2023-03-19 10:14:00.311859"], ["updated_at", "2023-03-19 10:14:00.311859"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 2.8ms | Allocations: 1187)
+Started POST "/api/v1/users/unfollow" for 127.0.0.1 at 2023-03-19 18:14:00 +0800
+Processing by Api::V1::UsersController#unfollow as HTML
+  Parameters: {"user_id"=>"37", "follower_id"=>"38"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.3ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 AND "user_follows"."user_id" = $2[0m  [["follower_id", 38], ["user_id", 37]]
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Destroy (1.7ms)[0m  [1m[31mDELETE FROM "user_follows" WHERE "user_follows"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 3.6ms | Allocations: 959)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Rerum et voluptates ab."], ["created_at", "2023-03-19 10:14:00.339168"], ["updated_at", "2023-03-19 10:14:00.339168"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sint dolorem vel ut."], ["created_at", "2023-03-19 10:14:00.341128"], ["updated_at", "2023-03-19 10:14:00.341128"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users/follow" for 127.0.0.1 at 2023-03-19 18:14:00 +0800
+Processing by Api::V1::UsersController#follow as HTML
+  Parameters: {"user_id"=>"39", "follower_id"=>"40"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.4ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 ORDER BY "user_follows"."id" ASC LIMIT $2[0m  [["follower_id", 40], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Create (0.5ms)[0m  [1m[32mINSERT INTO "user_follows" ("follower_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 40], ["user_id", 39], ["created_at", "2023-03-19 10:14:00.354459"], ["updated_at", "2023-03-19 10:14:00.354459"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 1187)
+Started POST "/api/v1/users/unfollow" for 127.0.0.1 at 2023-03-19 18:14:00 +0800
+Processing by Api::V1::UsersController#unfollow as HTML
+  Parameters: {"user_id"=>"39", "follower_id"=>"40"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[36mUserFollow Load (0.4ms)[0m  [1m[34mSELECT "user_follows".* FROM "user_follows" WHERE "user_follows"."follower_id" = $1 AND "user_follows"."user_id" = $2[0m  [["follower_id", 40], ["user_id", 39]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserFollow Destroy (0.6ms)[0m  [1m[31mDELETE FROM "user_follows" WHERE "user_follows"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.3ms | Allocations: 929)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
