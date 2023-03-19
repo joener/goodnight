@@ -4,6 +4,10 @@
 
 See timecards, Time in, Time out, Create User, Follow & Unfollow a User.
 
+## Database
+
+- Postgresql
+
 ## How to run / install
 
 - rvm / ruby ruby 2.6.3
